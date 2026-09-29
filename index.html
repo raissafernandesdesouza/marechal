@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121712">
+  <meta name="description" content="Chopp artesanal no seu ritmo. Conheça o Marechal, bar de autosserviço em Lavras, MG.">
+  <title>Marechal — Seu chopp. Seu ritmo.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #121712;
+      --paper: #f0f0e8;
+      --lime: #d9ff5b;
+      --muted: #a9b0a5;
+      --line: rgba(18, 23, 18, .18);
+      font-family: "DM Sans", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+    .topbar {
+      align-items: center;
+      background: var(--ink);
+      color: var(--paper);
+      display: flex;
+      height: 78px;
+      justify-content: space-between;
+      padding: 0 6.2%;
+    }
+    .brand {
+      align-items: center;
+      display: inline-flex;
+      gap: 11px;
+      text-decoration: none;
+    }
+    .brand-mark {
+      align-items: center;
+      border: 1px solid var(--lime);
+      border-radius: 50%;
+      color: var(--lime);
+      display: inline-flex;
+      font-family: "Oswald", sans-serif;
+      font-size: 19px;
+      height: 39px;
+      justify-content: center;
+      width: 39px;
+    }
+    .brand-name {
+      font-family: "Oswald", sans-serif;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .brand-name small {
+      color: var(--muted);
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      margin-top: 4px;
+    }
+    .nav-links { align-items: center; display: flex; gap: 34px; }
+    .nav-links a {
+      color: #d9ded5;
+      font-size: 12px;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-links .nav-cta {
+      border: 1px solid rgba(240, 240, 232, .42);
+      border-radius: 2px;
+      color: var(--paper);
+      padding: 11px 15px;
+    }
+
+    .hero {
+      background: var(--ink);
+      color: var(--paper);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: min(690px, calc(100svh - 78px));
+      overflow: hidden;
+    }
+    .hero-copy {
+      align-self: center;
+      padding: 76px 8.5vw 82px 12.4%;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      align-items: center;
+      color: var(--lime);
+      display: flex;
+      font-size: 10px;
+      font-weight: 700;
+      gap: 10px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { background: var(--lime); content: ""; height: 1px; width: 24px; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: 82px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: .99;
+      margin: 25px 0 22px;
+      text-transform: uppercase;
+    }
+    .hero h1 span { color: var(--lime); }
+    .hero-intro {
+      color: #c0c6bc;
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 370px;
+    }
+    .button-primary {
+      align-items: center;
+      background: var(--lime);
+      border: 1px solid var(--lime);
+      border-radius: 2px;
+      color: var(--ink);
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 700;
+      gap: 22px;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 0 17px;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .button-primary:hover { background: #e5ff94; transform: translateY(-2px); }
+    .button-primary span { font-size: 18px; font-weight: 400; }
+    .hero-facts { color: #b8beb4; display: flex; flex-wrap: wrap; font-size: 11px; gap: 22px; margin-top: 35px; }
+    .hero-facts strong { color: var(--paper); font-size: 13px; margin-right: 5px; }
+    .hero-photo { min-height: 520px; overflow: hidden; position: relative; }
+    .hero-photo::after {
+      background: linear-gradient(0deg, rgba(9, 12, 9, .7), transparent 48%), linear-gradient(90deg, rgba(18, 23, 18, .18), transparent 45%);
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+    .hero-photo img { height: 100%; inset: 0; object-fit: cover; object-position: center 43%; position: absolute; width: 100%; }
+    .photo-stamp {
+      border: 1px solid rgba(240, 240, 232, .6);
+      color: var(--paper);
+      font-size: 9px;
+      font-weight: 700;
+      left: 28px;
+      letter-spacing: 1.5px;
+      padding: 10px 12px;
+      position: absolute;
+      text-transform: uppercase;
+      top: 28px;
+      z-index: 1;
+    }
+    .photo-caption { bottom: 28px; color: white; font-size: 11px; left: 29px; position: absolute; z-index: 1; }
+    .photo-caption span { color: var(--lime); margin-right: 8px; }
+
+    .experience { padding: 112px 12.4% 118px; }
+    .section-kicker { color: #626a5d; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+    .experience-grid { align-items: center; display: grid; gap: 11%; grid-template-columns: 1.05fr .95fr; margin-top: 20px; }
+    .experience h2, .gallery h2, .visit h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: 53px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.05;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .experience-copy > p { color: #5b6257; font-size: 14px; line-height: 1.75; max-width: 440px; }
+    .steps { border-top: 1px solid var(--line); margin-top: 35px; max-width: 480px; }
+    .step { align-items: baseline; border-bottom: 1px solid var(--line); display: grid; gap: 14px; grid-template-columns: 34px 1fr; padding: 17px 0; }
+    .step b { color: #6b7e2d; font-family: "Oswald", sans-serif; font-size: 15px; }
+    .step p { color: #4e554a; font-size: 12px; line-height: 1.6; margin: 0; }
+    .step strong { color: var(--ink); font-size: 13px; }
+    .card-scene { align-items: center; display: flex; justify-content: center; min-height: 320px; position: relative; }
+    .card-scene::before {
+      border: 1px solid rgba(18, 23, 18, .16);
+      border-radius: 50%;
+      content: "";
+      height: 290px;
+      position: absolute;
+      width: 290px;
+    }
+    .tap-card {
+      background: var(--ink);
+      border-radius: 9px;
+      box-shadow: 0 20px 45px rgba(18, 23, 18, .2);
+      color: var(--paper);
+      height: 205px;
+      padding: 22px 25px;
+      position: relative;
+      transform: rotate(-7deg);
+      width: 325px;
+    }
+    .tap-card::before, .tap-card::after { border: 1px solid rgba(217, 255, 91, .35); border-radius: 50%; content: ""; height: 180px; position: absolute; right: -82px; top: 60px; width: 180px; }
+    .tap-card::after { height: 130px; right: -56px; top: 85px; width: 130px; }
+    .card-top { align-items: center; display: flex; justify-content: space-between; position: relative; z-index: 1; }
+    .card-label { color: #d8dfd2; font-size: 9px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; }
+    .card-chip { border: 1px solid var(--lime); border-radius: 3px; height: 23px; width: 30px; }
+    .tap-card h3 { color: var(--lime); font-family: "Oswald", sans-serif; font-size: 30px; font-weight: 600; margin: 39px 0 0; position: relative; text-transform: uppercase; z-index: 1; }
+    .card-footer { bottom: 19px; color: #d8dfd2; font-size: 9px; letter-spacing: 1px; position: absolute; text-transform: uppercase; z-index: 1; }
+    .card-note { background: var(--lime); bottom: 14px; color: var(--ink); font-size: 9px; font-weight: 700; padding: 9px 12px; position: absolute; right: 0; transform: rotate(4deg); }
+
+    .gallery { background: #e3e5d9; padding: 86px 12.4% 96px; }
+    .gallery-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 30px; }
+    .gallery h2 { font-size: 42px; margin: 9px 0 0; }
+    .gallery-link { color: #41493a; font-size: 11px; font-weight: 600; margin-bottom: 7px; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .gallery-grid { display: grid; gap: 12px; grid-template-columns: 1.25fr .85fr .85fr; }
+    .gallery figure { margin: 0; min-height: 270px; overflow: hidden; position: relative; }
+    .gallery figure:first-child { min-height: 354px; }
+    .gallery img { height: 100%; inset: 0; object-fit: cover; position: absolute; transition: transform .5s ease; width: 100%; }
+    .gallery figure:hover img { transform: scale(1.04); }
+    .gallery figcaption { background: linear-gradient(transparent, rgba(11, 15, 11, .76)); bottom: 0; color: white; font-size: 10px; left: 0; padding: 28px 15px 14px; position: absolute; right: 0; }
+
+    .visit { background: var(--ink); color: var(--paper); padding: 82px 12.4% 75px; }
+    .visit-grid { align-items: center; display: grid; gap: 8%; grid-template-columns: 1.15fr .85fr; }
+    .visit .section-kicker { color: var(--lime); }
+    .visit h2 { font-size: 49px; margin: 11px 0 17px; }
+    .visit-copy > p { color: #c0c6bc; font-size: 13px; line-height: 1.7; margin-bottom: 23px; max-width: 455px; }
+    .visit-details { border-left: 1px solid rgba(240, 240, 232, .28); padding-left: 30px; }
+    .detail { border-bottom: 1px solid rgba(240, 240, 232, .18); padding: 14px 0; }
+    .detail:first-child { padding-top: 0; }
+    .detail span { color: var(--lime); display: block; font-size: 9px; font-weight: 700; letter-spacing: 1.4px; margin-bottom: 7px; text-transform: uppercase; }
+    .detail p, .detail a { color: var(--paper); font-size: 12px; line-height: 1.6; margin: 0; }
+    .detail a { text-underline-offset: 3px; }
+    footer { align-items: center; background: var(--ink); border-top: 1px solid rgba(240, 240, 232, .16); color: #a9b0a5; display: flex; font-size: 10px; justify-content: space-between; padding: 22px 6.2%; }
+    footer a { color: var(--lime); text-decoration: none; }
+    .reveal { animation: arrive .7s both; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+    @media (max-width: 900px) {
+      .topbar { padding: 0 5%; }
+      .nav-links { gap: 18px; }
+      .hero-copy { padding-left: 9%; padding-right: 6%; }
+      .hero h1 { font-size: 68px; }
+      .experience, .gallery, .visit { padding-left: 8%; padding-right: 8%; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery figure:first-child { grid-column: span 2; min-height: 340px; }
+    }
+    @media (max-width: 620px) {
+      .topbar { height: 68px; padding: 0 20px; }
+      .brand-mark { height: 35px; width: 35px; }
+      .brand-name { font-size: 20px; }
+      .nav-links { gap: 0; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links .nav-cta { font-size: 10px; padding: 10px 11px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 65px 26px 54px; }
+      .hero h1 { font-size: 64px; margin-top: 21px; }
+      .hero-intro { font-size: 14px; max-width: 330px; }
+      .hero-facts { gap: 14px; margin-top: 27px; }
+      .hero-photo { min-height: 370px; }
+      .photo-stamp { left: 18px; top: 18px; }
+      .photo-caption { bottom: 20px; left: 19px; }
+      .experience { padding: 72px 25px 76px; }
+      .experience-grid { gap: 28px; grid-template-columns: 1fr; }
+      .experience h2 { font-size: 43px; }
+      .card-scene { min-height: 285px; }
+      .card-scene::before { height: 250px; width: 250px; }
+      .tap-card { height: 185px; width: min(305px, 86vw); }
+      .tap-card h3 { margin-top: 31px; }
+      .gallery { padding: 68px 20px 76px; }
+      .gallery-heading { align-items: start; flex-direction: column; gap: 14px; }
+      .gallery h2 { font-size: 37px; }
+      .gallery-grid { gap: 9px; grid-template-columns: 1fr 1fr; }
+      .gallery figure, .gallery figure:first-child { min-height: 225px; }
+      .gallery figure:first-child { grid-column: span 2; min-height: 300px; }
+      .visit { padding: 70px 25px 62px; }
+      .visit-grid { gap: 35px; grid-template-columns: 1fr; }
+      .visit h2 { font-size: 43px; }
+      .visit-details { padding-left: 18px; }
+      footer { align-items: flex-start; flex-direction: column; gap: 10px; padding: 20px 25px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Marechal, início">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">Marechal<small>Lavras · desde sempre, do seu jeito</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#experiencia">Como funciona</a>
+      <a href="#ambiente">O ambiente</a>
+      <a class="nav-cta" href="https://www.instagram.com/marechalbar_/" target="_blank" rel="noreferrer">Acompanhe o bar ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">O primeiro autosserviço de Lavras</div>
+        <h1>Seu chopp.<br><span>Seu ritmo.</span></h1>
+        <p class="hero-intro">Carregue seu cartão, escolha seu chopp e sirva no seu tempo. Aqui, o próximo brinde está nas suas mãos.</p>
+        <a class="button-primary" href="#experiencia">Descubra o autosserviço <span>↓</span></a>
+        <div class="hero-facts">
+          <span><strong>4,6 ★</strong> no Google</span>
+          <span><strong>166</strong> avaliações</span>
+          <span><strong>R$ 40–120</strong> por pessoa</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/marechal-night.jpg" alt="Noite animada no Marechal, com música e clientes reunidos" fetchpriority="high">
+        <span class="photo-stamp">Lavras · Minas Gerais</span>
+        <span class="photo-caption"><span>●</span> Boa música, chopp gelado e gente por perto.</span>
+      </div>
+    </section>
+
+    <section class="experience" id="experiencia">
+      <div class="section-kicker">Liberdade direto da torneira</div>
+      <div class="experience-grid">
+        <div class="experience-copy">
+          <h2>Você no comando<br>do próximo brinde.</h2>
+          <p>Sem pressa para escolher e sem esperar a próxima rodada. O cartão do Marechal deixa você à vontade para explorar os chopps e servir no seu próprio ritmo.</p>
+          <div class="steps" aria-label="Como funciona o autosserviço">
+            <div class="step"><b>01</b><p><strong>Carregue seu cartão</strong><br>Coloque créditos para começar a rodada.</p></div>
+            <div class="step"><b>02</b><p><strong>Escolha o chopp</strong><br>Descubra os estilos disponíveis nas torneiras.</p></div>
+            <div class="step"><b>03</b><p><strong>Sirva e aproveite</strong><br>Seu próximo brinde, no seu tempo.</p></div>
+          </div>
+        </div>
+        <div class="card-scene" aria-label="Ilustração do cartão de autosserviço do Marechal">
+          <div class="tap-card">
+            <div class="card-top"><span class="card-label">Cartão de autosserviço</span><span class="card-chip" aria-hidden="true"></span></div>
+            <h3>Marechal</h3>
+            <div class="card-footer">Seu chopp. Seu ritmo.</div>
+          </div>
+          <span class="card-note">CARREGOU. SERVIU. BRINDOU.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="ambiente">
+      <div class="gallery-heading">
+        <div><div class="section-kicker">Um lugar para ficar mais um pouco</div><h2>Do primeiro gole<br>à saideira.</h2></div>
+        <a class="gallery-link" href="https://www.instagram.com/marechalbar_/" target="_blank" rel="noreferrer">Mais momentos no Instagram ↗</a>
+      </div>
+      <div class="gallery-grid">
+        <figure><img src="assets/marechal-night.jpg" alt="Ambiente do Marechal em uma noite de música e chopp" loading="lazy"><figcaption>Noite boa pede mais um brinde.</figcaption></figure>
+        <figure><img src="assets/marechal-food.jpg" alt="Petisco servido no Marechal" loading="lazy"><figcaption>Petiscos para acompanhar.</figcaption></figure>
+        <figure><img src="assets/marechal-games.jpg" alt="Sinuca e jogos no ambiente do Marechal" loading="lazy"><figcaption>Chopp, música e sinuca.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="visit" id="visite">
+      <div class="visit-grid">
+        <div class="visit-copy">
+          <div class="section-kicker">A mesa já é sua</div>
+          <h2>Seu próximo brinde<br>é em Lavras.</h2>
+          <p>Chopp artesanal, música ao vivo e um cartão sempre pronto para a próxima rodada. Chega mais.</p>
+          <a class="button-primary" href="https://www.google.com/maps/search/?api=1&query=R.+Mal.+Deodoro+da+Fonseca%2C+172%2C+Lavras%2C+MG" target="_blank" rel="noreferrer">Traçar rota <span>↗</span></a>
+        </div>
+        <div class="visit-details">
+          <div class="detail"><span>Onde</span><p>R. Mal. Deodoro da Fonseca, 172<br>Artur Bernardes · Lavras, MG</p></div>
+          <div class="detail"><span>Quando</span><p>Quarta e quinta a partir das 18h<br>Sexta e sábado a partir das 17h</p></div>
+          <div class="detail"><span>Novidades e programação</span><a href="https://www.instagram.com/marechalbar_/" target="_blank" rel="noreferrer">@marechalbar_ ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© Marechal · Lavras, MG</span><a href="https://www.instagram.com/marechalbar_/" target="_blank" rel="noreferrer">Instagram @marechalbar_ ↗</a></footer>
+</body>
+</html>
